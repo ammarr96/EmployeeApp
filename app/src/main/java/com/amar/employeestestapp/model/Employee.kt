@@ -3,7 +3,7 @@ package com.amar.employeestestapp.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.amar.employeestestapp.Constants
+import com.amar.employeestestapp.util.Constants
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

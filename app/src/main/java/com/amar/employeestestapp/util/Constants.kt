@@ -1,4 +1,4 @@
-package com.amar.employeestestapp
+package com.amar.employeestestapp.util
 
 object Constants {
 

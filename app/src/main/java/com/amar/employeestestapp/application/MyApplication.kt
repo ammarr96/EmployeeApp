@@ -1,4 +1,4 @@
-package com.amar.employeestestapp
+package com.amar.employeestestapp.application
 
 import android.app.Application
 import androidx.room.Room

@@ -2,7 +2,7 @@ package com.amar.employeestestapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.amar.employeestestapp.MyApplication
+import com.amar.employeestestapp.application.MyApplication
 import com.amar.employeestestapp.model.Employee
 import com.amar.employeestestapp.network.ApiService
 import com.amar.employeestestapp.network.RetrofitFactory
