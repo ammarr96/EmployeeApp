@@ -21,14 +21,6 @@ import com.amar.employeestestapp.model.Employee
 import com.amar.employeestestapp.view.adapter.EmployeeRecyclerViewAdapter
 import com.amar.employeestestapp.viewmodel.EmployeeListViewModel
 
-/**
- * An activity representing a list of Pings. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a [EmployeeDetailActivity] representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
- */
 class EmployeeListActivity : AppCompatActivity() {
 
     private var twoPane: Boolean = false
@@ -69,7 +61,7 @@ class EmployeeListActivity : AppCompatActivity() {
         }
         else
         {
-            //Toast.makeText(this,"No internet found. Showing cached list in the view",Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,"No internet found. Showing cached list in the view", Toast.LENGTH_LONG).show()
         }
 
         employeeListViewModel.getEmployeeData().observe(this, Observer {

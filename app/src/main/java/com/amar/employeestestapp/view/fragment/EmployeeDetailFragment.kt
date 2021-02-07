@@ -13,12 +13,6 @@ import com.amar.employeestestapp.model.Employee
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-/**
- * A fragment representing a single Item detail screen.
- * This fragment is either contained in a [EmployeeListActivity]
- * in two-pane mode (on tablets) or a [EmployeeDetailActivity]
- * on handsets.
- */
 class EmployeeDetailFragment : Fragment() {
 
     private var employee: Employee? = null
@@ -33,9 +27,6 @@ class EmployeeDetailFragment : Fragment() {
 
         arguments?.let {
             if (it.containsKey(ARG_ITEM_ID)) {
-                // Load the dummy content specified by the fragment
-                // arguments. In a real-world scenario, use a Loader
-                // to load content from a content provider.
                 employee = it.get(ARG_ITEM_ID) as Employee?
                 activity?.findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)?.title = employee?.name
             }
@@ -51,7 +42,6 @@ class EmployeeDetailFragment : Fragment() {
         descTV = rootView.findViewById(R.id.descTV)
         introTV = rootView.findViewById(R.id.introTV)
 
-        // Show the dummy content as text in a TextView.
         employee?.let {
             bindDataTView()
         }
