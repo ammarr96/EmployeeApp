@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ne_employee_selected">Nijedan uposlenik nije odabran</string>
+    <string name="employee_list">Lista uposlenika</string>
+
+    <string name="title">Pozicija</string>
+    <string name="description">Opis</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name" translatable="false">EmployeesTestApp</string>
+    <string name="ne_employee_selected">No employee selected</string>
+    <string name="employee_list">Employee list</string>
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+
+
+</resources>

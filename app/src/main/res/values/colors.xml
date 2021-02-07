@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#058CCE</color>
+    <color name="light_blue">#2EA3DC</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="toolbar_color">#058CCE</color>
+
+    <color name="background_color">#12058CCE</color>
+</resources>
