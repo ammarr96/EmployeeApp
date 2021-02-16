@@ -6,21 +6,15 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageView
 import com.amar.employeestestapp.R
 import com.amar.employeestestapp.model.Employee
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import kotlinx.android.synthetic.main.fragment_employee_detail.*
 
 class EmployeeDetailFragment : Fragment() {
 
     private var employee: Employee? = null
-
-    lateinit var profileImageView: AppCompatImageView
-    lateinit var positionTV: TextView
-    lateinit var descTV: TextView
-    lateinit var introTV: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,30 +25,31 @@ class EmployeeDetailFragment : Fragment() {
                 activity?.findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)?.title = employee?.name
             }
         }
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_employee_detail, container, false)
 
-        profileImageView = rootView.findViewById(R.id.profileImage)
-        positionTV = rootView.findViewById(R.id.positionTV)
-        descTV = rootView.findViewById(R.id.descTV)
-        introTV = rootView.findViewById(R.id.introTV)
+        return rootView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         employee?.let {
             bindDataTView()
         }
-
-        return rootView
     }
 
     fun bindDataTView() {
+
         positionTV.text = employee?.title ?: ""
         descTV.text = employee?.description ?: ""
         introTV.text = employee?.intro ?: ""
 
-        Glide.with(this).load(employee?.getImageUrl()).transition(DrawableTransitionOptions.withCrossFade()).into(profileImageView);
+        Glide.with(this).load(employee?.getImageUrl()).transition(DrawableTransitionOptions.withCrossFade()).into(profileImage)
 
     }
 

@@ -22,6 +22,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.employee_recyclerview_item.view.*
 
 
 class EmployeeRecyclerViewAdapter(private val parentActivity: EmployeeListActivity,
@@ -65,6 +66,7 @@ class EmployeeRecyclerViewAdapter(private val parentActivity: EmployeeListActivi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
 
+        holder.imageView.setImageBitmap(null)
         Glide.with(holder.imageView)
             .asBitmap()
             .load(item.getImageUrl())
@@ -89,7 +91,7 @@ class EmployeeRecyclerViewAdapter(private val parentActivity: EmployeeListActivi
         }
 
         //track event for presenting employee to list
-        EventService.sendEvent(EventType.EMPLOYEE_SHOWED_IN_LIST, String.format("%s %s", item.name, item.surname));
+        EventService.sendEvent(EventType.EMPLOYEE_SHOWED_IN_LIST, String.format("%s %s", item.name, item.surname))
 
     }
 

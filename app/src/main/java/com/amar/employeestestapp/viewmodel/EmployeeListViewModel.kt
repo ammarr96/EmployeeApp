@@ -23,12 +23,8 @@ class EmployeeListViewModel: ViewModel() {
         return employeeRepository.getEmployees()
     }
 
-    /*fun getEmployeeData(): LiveData<List<Employee>> {
-        return employeeLiveData
-    }*/
 
     fun getEmployeesFromAPIAndStore() {
-        //return employeeRepository.getEmployeesFromApi()
         employeeRepository.getEmployeesFromApi()
     }
 

@@ -15,6 +15,9 @@ interface EmployeeDAO {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllEmployees(countryList: List<Employee>)
+    fun insertAllEmployees(list: List<Employee>)
+
+    @Query("DELETE FROM employees")
+    fun deleteAll()
 
 }

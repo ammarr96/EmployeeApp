@@ -20,6 +20,8 @@ import com.amar.employeestestapp.R
 import com.amar.employeestestapp.model.Employee
 import com.amar.employeestestapp.view.adapter.EmployeeRecyclerViewAdapter
 import com.amar.employeestestapp.viewmodel.EmployeeListViewModel
+import kotlinx.android.synthetic.main.activity_employee_list.*
+import kotlinx.android.synthetic.main.item_list.*
 
 class EmployeeListActivity : AppCompatActivity() {
 
@@ -28,7 +30,7 @@ class EmployeeListActivity : AppCompatActivity() {
 
     lateinit var employeeListViewModel: EmployeeListViewModel
     lateinit var adapter: EmployeeRecyclerViewAdapter
-    lateinit var progressBar: ProgressBar
+    //lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,11 +44,11 @@ class EmployeeListActivity : AppCompatActivity() {
             twoPane = true
         }
 
-        progressBar = findViewById(R.id.progressBar);
+        progressBar
 
         employeeListViewModel = ViewModelProvider(this).get(EmployeeListViewModel::class.java)
 
-        setupRecyclerView(findViewById(R.id.item_list))
+        setupRecyclerView(item_list)
 
         getData()
     }
@@ -65,6 +67,7 @@ class EmployeeListActivity : AppCompatActivity() {
         }
 
         employeeListViewModel.getEmployeeData().observe(this, Observer {
+            employeeList.clear()
             employeeList.addAll(it)
             adapter.setItems(employeeList)
             adapter.notifyDataSetChanged()

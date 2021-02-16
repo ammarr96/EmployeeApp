@@ -34,15 +34,13 @@ class EmployeesRepository {
 
         call.enqueue(object : Callback<List<Employee>?> {
             override fun onResponse(call: Call<List<Employee>?>, response: Response<List<Employee>?>) {
-                //employeeList.value = response.body()
-
 
                 when(response.code())
                 {
                     200 ->{
                         Thread(Runnable {
 
-                            MyApplication.database!!.employeeDao().getAllEmployees()
+                            MyApplication.database!!.employeeDao().deleteAll()
                             MyApplication.database!!.employeeDao().insertAllEmployees(response.body()!!)
 
                         }).start()

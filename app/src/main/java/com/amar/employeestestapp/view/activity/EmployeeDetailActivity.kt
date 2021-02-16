@@ -12,17 +12,12 @@ import com.amar.employeestestapp.util.Util
 import com.amar.employeestestapp.view.fragment.EmployeeDetailFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import kotlinx.android.synthetic.main.activity_employee_detail.*
+import kotlinx.android.synthetic.main.employee_recyclerview_item.*
 
 class EmployeeDetailActivity : AppCompatActivity() {
 
     private lateinit var employee: Employee
-
-    lateinit var profileImageView: AppCompatImageView
-    lateinit var positionTV: TextView
-    lateinit var descTV: TextView
-    lateinit var introTV: TextView
-    lateinit var card1: CardView
-    lateinit var card2: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +25,6 @@ class EmployeeDetailActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.detail_toolbar))
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        profileImageView = findViewById(R.id.profileImage)
-        positionTV = findViewById(R.id.positionTV)
-        descTV = findViewById(R.id.descTV)
-        introTV = findViewById(R.id.introTV)
-        card1 = findViewById(R.id.card1)
-        card2 = findViewById(R.id.card2)
 
         employee = intent.extras?.get(EmployeeDetailFragment.ARG_ITEM_ID) as Employee
 
@@ -49,7 +37,7 @@ class EmployeeDetailActivity : AppCompatActivity() {
         descTV.text = employee.description
         introTV.text = employee.intro
 
-        Glide.with(this).load(employee.getImageUrl()).transition(DrawableTransitionOptions.withCrossFade()).into(profileImageView);
+        Glide.with(this).load(employee.getImageUrl()).transition(DrawableTransitionOptions.withCrossFade()).into(profileImage)
 
         Util.setScaleAnimation(card1)
         Util.setScaleAnimation(card2)
